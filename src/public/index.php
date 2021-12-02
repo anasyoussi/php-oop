@@ -1,13 +1,12 @@
-<?php 
- 
-require __DIR__ . '/../vendor/autoload.php';
+<?php
 
-// use App\PaymentGateway\Paddle\Transaction; 
+use App\Enums\Status;
+use App\PaymentGateway\Paddle\Transaction;
 
-$paddleTransaction = new \App\PaymentGateway\Paddle\Transaction() ;
+require __DIR__ . '/../vendor/autoload.php'; 
 
-// $id = new \Ramsey\Uuid\UuidFactory();  
+$transaction = new Transaction() ;
 
-// echo $id->uuid4();
+$transaction->setStatus(Status::PAID);
 
-var_dump($paddleTransaction); 
+var_dump($transaction);
